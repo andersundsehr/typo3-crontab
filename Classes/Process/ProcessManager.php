@@ -119,7 +119,7 @@ class ProcessManager implements LoggerAwareInterface
             ['process_id'],
             self::runningTable,
             ['identifier' => $taskIdentifier]
-        );
+        )->fetchAllAssociative();
 
         foreach ($result as $row) {
             $processId = (int)$row['process_id'];
@@ -138,7 +138,7 @@ class ProcessManager implements LoggerAwareInterface
             ['process_id'],
             self::runningTable,
             ['identifier' => $taskIdentifier]
-        );
+        )->fetchAllAssociative();
 
         foreach ($result as $row) {
             $processId = (int)$row['process_id'];
